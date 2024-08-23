@@ -1,0 +1,49 @@
+<div class="navbar">
+    <h1>Employee Records Table</h1>
+    <button (click)="showAddPage()">Add Employee</button>
+</div>
+<div id="recordsPage">
+    <div class="search-container">
+        <label for="searchInput">Search:</label>
+        <input type="text" id="searchInput" placeholder="Search records" [(ngModel)]="searchTerm" (input)="searchRecords()">
+    </div>
+
+    <div id="tableContainer" *ngIf="paginatedData.length > 0 && noRecordsFound">
+        <table id="recordTable" class="recordTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of paginatedData">
+                    <td>{{item.firstName}}</td>
+                    <td>{{item.lastName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>
+                        <button (click)="editRecord(item.id)">Edit</button>
+                        <button (click)="deleteRecord(item.id)" style="margin-left:10px ;">Delete</button>
+                        <button (click)="duplicateRecord(item.id)" style="margin-left:10px ;">Duplicate</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="paginationContainer" class="footer">
+            <span>
+                Showing {{ (currentPage - 1) * itemsPerPage + 1 }} to
+                {{ getMinValue() }} out of {{ dataList.length }} Entries
+            </span>
+
+            <div class="index_button">
+                <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+                <button>{{currentPage}}</button>
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages()">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

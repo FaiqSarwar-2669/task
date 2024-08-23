@@ -1,0 +1,91 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+
+    h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+
+    .search-container {
+        margin-bottom: 20px;
+    }
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: left;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+    }
+
+    .recordTable {
+        width: 100%;
+    }
+
+    .footer {
+        margin-top: 5px;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .index_button button {
+            width: auto;
+            background-color: #4CAF50; 
+            color: white;
+            padding: 7px 15px; 
+            font-size: 15px; 
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 2px; 
+        }
+        .index_button button.active {
+            background-color: #45a049; 
+        }
+        .index_button button:hover {
+            background-color: darkgreen; 
+        }
+        .index_button button:disabled {
+            background-color: #ccc; 
+            cursor: not-allowed;
+        }
+    }
+    
+}

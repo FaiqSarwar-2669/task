@@ -1,0 +1,26 @@
+<div class="navbar">
+    <h1>Update Employee Record</h1>
+    <button (click)="Back()">Back</button>
+</div>
+<div id="formPage">
+    <div class="scrollable-container">
+        <div class="tabel1">
+            <form id="recordForm">
+                <input type="hidden" id="editIndex" value="-1">
+                <label>First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter name" required [(ngModel)]="data.firstName">
+                
+                <label>Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required [(ngModel)]="data.lastName">
+    
+                <label>Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required [(ngModel)]="data.email">
+    
+                <label>Phone Number</label>
+                <input type="tel" id="phoneNumber" name="Phone" placeholder="Enter number" [(ngModel)]="data.phoneNumber">
+                
+                <button type="submit" (click)="Update()">Save Data</button>
+            </form>
+        </div>
+    </div>
+</div>
